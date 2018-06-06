@@ -748,7 +748,9 @@ RCT_EXPORT_METHOD(clearAllLocalNotifications) {
  */
 RCT_EXPORT_METHOD(setBadge:(NSInteger)value callback:(RCTResponseSenderBlock)callback) {// ->Bool
   [[UIApplication sharedApplication] setApplicationIconBadgeNumber:value];
-  NSNumber *badgeNumber = [NSNumber numberWithBool:[JPUSHService setBadge: value]];
+  //注意: 角标设为-1为了ICON上角标消失但解决通知栏通知不消失问题, Jpush只支持[0,9999]区间内的badge,此处需要判断并处理
+  NSInteger bage = value != -1 ? value : 0;
+  NSNumber *badgeNumber = [NSNumber numberWithBool:[JPUSHService setBadge: bage]];
   callback(@[badgeNumber]);
 }
 
