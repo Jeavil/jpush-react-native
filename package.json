@@ -1,6 +1,6 @@
 {
-  "name": "jpush-react-native",
-  "version": "2.2.3",
+  "name": "23mofang-jpush-react-native",
+  "version": "100.2.3",
   "description": "a jpush plugin for react native application",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "types": "index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git@github.com:jpush/jpush-react-native.git"
+    "url": "git+ssh://git@github.com/jpush/jpush-react-native.git"
   },
   "keywords": [
     "react",
@@ -84,5 +84,8 @@
   "dependencies": {
     "inquirer": "*",
     "mpatch": "^0.1.0"
+  },
+  "directories": {
+    "example": "example"
   }
 }
